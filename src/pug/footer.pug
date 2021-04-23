@@ -1,0 +1,39 @@
+-values=['О нас','Новости','Служба поддежки', 'Услуги']
+mixin item (value)
+        p.txt_normal.txt_wd=value
+
+mixin row (name,caption,values)
+    span(class=name)
+        p.txt_bold=caption
+        each value in values
+            +item(value)
+
+doctype html
+html(lang="ru")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        link(rel="stylesheet" href="./src/css/Footers.css")
+    title="Toxin-footer"
+    body
+        .Rectangle
+            span.group
+                img(src="src/img/Logo.svg" alt="Logo" class="logo")
+                span.txt_box1
+                    p.txt_normal="Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды"
+            +row("group1","Навигация",values)
+            +row("group2","О нас",['О сервисе','Наша команда','Вакансии','Инвесторы'])
+            +row("group3","Служба поддежки",['Соглашения','Сообщества','Вакансии','Связь с нами'])
+            +row("group4","Подписка",['Получайте специальные предложения и новости сервиса'])
+
+        .Rectangle2
+            a.txt_normal="Email"
+            img(src="src/img/arrow_forward.svg" class="arrow_forward")
+        .Rectangle3
+            span.txt_c
+                a.txt_normal="Copyright © 2018 Toxin отель. Все права защищены."
+            span.img_c
+                img(src="src/img/tw.svg" class="img_lg")
+                img(src="src/img/fb.svg" class="img_lg img2")
+                img(src="src/img/inst.svg" class="img_lg img3")
