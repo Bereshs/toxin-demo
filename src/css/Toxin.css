@@ -1,21 +1,81 @@
-.txt_normal {
+.txt {
     font-family: Montserrat;
     font-style: normal;
     font-weight: normal;
+}
+.txt_14 {
     font-size: 14px;
     line-height: 17px;
-    color: rgba(31, 32, 65, 0.5);
 }
-.txt_bold {
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: bold;
+.txt_12 {
     font-size: 12px;
     line-height: 15px;
-    text-transform: uppercase;
+}
+.color_1 {
+    color: rgba(31, 32, 65, 0.5);
+}
+.color_2 {
+    color: #BC9CFF;
+}
+.color_3 {
     color: #1F2041;
+}
+
+.color_white {
+    color: #FFFFFF;
+}
+.color_black {
+    color: #1F2041BF;
 
 }
-.txt_wd {
-    line-height: 28px;
+.color_dark {
+    color: #1F204180;
+
+}
+
+.txt_700 {
+    font-weight: 700;
+}
+.txt_uppercase {
+    text-transform: uppercase;
+}
+
+.icons_txt {
+    position: absolute;
+    top: -3px;
+    font-size: 24px;
+    line-height: 20px;
+
+    /* identical to box height */
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    /* Dark 50% */
+    color: rgba(31, 32, 65, 0.5);
+}
+
+.button_default{
+    position: absolute;
+    height: 34px;
+    top: 0px;
+    border-radius: 22px;
+    border: 2px solid;
+    border-color: #8BA4F9;
+  //  border-image-source: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    padding: 0px;
+}
+.button_txt {
+    position: absolute;
+    top: 9px;
+    left: 20px;
+}
+.button_fill {
+    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+}
+
+
+@font-face{
+    font-family: Montserrat; /* Гарнитура шрифта */
+    src: url("../fnt/Montserrat-Regular.ttf"); /* Путь к файлу со шрифтом */
 }

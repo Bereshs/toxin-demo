@@ -1,11 +1,10 @@
-.Rectangle {
+.Header {
     /* Rectangle */
     position: absolute;
     width: 1440px;
     height: 70px;
     left: 0px;
     top: 140px;
-
     background: #FFFFFF;
     box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
 }
@@ -14,13 +13,68 @@
     width: 105.69px;
     height: 40px;
     left: 140px;
-    top: 155px;
+    top: 0px;
 }
-
 .group2 {
     position: absolute;
     width: 447px;
     height: 21px;
-    left: 530px;
-    top: 166px;
+    left: 712px; /*530 */
+    top: 11px;
+}
+.tx1 {
+    position: absolute;
+    left: 0px;
+}
+.tx2 {
+    position: absolute;
+    left: 63px;
+}
+.tx3 {
+    position: absolute;
+    left: 157px;
+}
+.tx4 {
+    position: absolute;
+    left: 249px;
+}
+.tx5 {
+    position: absolute;
+    left: 331px;
+}
+.arrow1 {
+    position: absolute;
+    left: 113px;
+}
+.arrow2 {
+    position: absolute;
+    left: 423px;
+}
+.button1 {
+    position: absolute;
+    left: 997px;
+    width: 87px;
+}
+.button2 {
+    position: absolute;
+    left: 1104px;
+    width: 196px;
+}
+.line {
+    position: absolute;
+    width: 1px;
+    height: 30px;
+    left: 1179px;
+    top: 0px;
+
+    /* Dark 10% */
+    background: rgba(31, 32, 65, 0.1);
+}
+.sp {
+    position: absolute;
+    width: 100px;
+    height: 30px;
+    left: 1190px;
+    top: 10px;
+
 }
