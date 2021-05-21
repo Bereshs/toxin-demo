@@ -1,58 +1,21 @@
-.txt {
-    font-family: Montserrat;
+@font-face{
+    font-family: "Montserrat"; /* Гарнитура шрифта */
+    src: url("../fnt/Montserrat-Regular.ttf") format("truetype");
     font-style: normal;
     font-weight: normal;
 }
-.txt_14 {
-    font-size: 14px;
-    line-height: 17px;
-}
-.txt_12 {
-    font-size: 12px;
-    line-height: 15px;
-}
-.color_1 {
-    color: rgba(31, 32, 65, 0.5);
-}
-.color_2 {
-    color: #BC9CFF;
-}
-.color_3 {
-    color: #1F2041;
-}
 
-.color_white {
-    color: #FFFFFF;
+@font-face{
+    font-family: "Avesome"; /* Гарнитура шрифта */
+    src: url("../fnt/fa-brands-400.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
 }
-.color_black {
-    color: #1F2041BF;
-
-}
-.color_dark {
-    color: #1F204180;
-
-}
-
 .txt_700 {
     font-weight: 700;
 }
-.txt_uppercase {
+.uppercase {
     text-transform: uppercase;
-}
-
-.icons_txt {
-    position: absolute;
-    top: -3px;
-    font-size: 24px;
-    line-height: 20px;
-
-    /* identical to box height */
-    display: flex;
-    align-items: center;
-    text-align: center;
-
-    /* Dark 50% */
-    color: rgba(31, 32, 65, 0.5);
 }
 
 .button_default{
@@ -65,6 +28,7 @@
   //  border-image-source: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
     padding: 0px;
 }
+
 .button_txt {
     position: absolute;
     top: 9px;
@@ -74,8 +38,141 @@
     background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
 }
 
+.color_white {
+    color: #FFFFFF;
+}
+.color_darkShade {
+    color: #1F2041;
+}
+.color_darkShade75 {
+    color: rgba(31, 32, 65, 0.75);
+}
+.color_darkShade50 {
+    color: rgba(31, 32, 65, 0.5);
+}
+.color_darkShade25 {
+    color: rgba(31, 32, 65, 0.25);
+}
+.color_darkShade5 {
+    color: rgba(31, 32, 65, 0.05);
+}
+.color_purple {
+    color: #BC9CFF;
+}
+.color_green{
+    color:#6FCF97;
+}
+h1 {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 29px;
+}
 
-@font-face{
-    font-family: Montserrat; /* Гарнитура шрифта */
-    src: url("../fnt/Montserrat-Regular.ttf"); /* Путь к файлу со шрифтом */
+h2 {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 19px;
+    line-height: 23px;
+}
+h3 {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: uppercase;
+    color: #1F2041;
+}
+
+body {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    color:  rgba(31, 32, 65, 0.5);
+    background-color: #E5E5E5;
+}
+
+.txt {
+    font-family: Montserrat, serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+}
+
+.left {
+    text-align: left;
+    padding-left: 10px;
+}
+.right {
+    text-align: right;
+}
+.center {
+    text-align: center;
+}
+
+.downspace5 {
+    padding: 5px;
+}
+.upspace20 {
+    padding-top: 20px;
+}
+.upspace25 {
+    padding-top: 25px;
+}
+.fs-24 {
+    font-size: 24px;
+}
+.lh-24 {
+    line-height: 24px;
+}
+
+.vcenter {
+    display: inline;
+    vertical-align: middle;
+}
+.top {
+    vertical-align: top;
+}
+.gradient {
+    color: transparent;
+    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+.fontIcons {
+    font-family: Avesome;
+    font-style: normal;
+    font-weight: normal;
+}
+.leftspace20 {
+    padding-left: 20px;
+}
+
+.width {
+    position: relative;
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    top: 30%;
+}
+.def {
+    position: relative;
+    display: inline-block;
+    vertical-align: bottom;
+}
+
+.flex {
+    position: relative;
+    display: flex;
+    flex-flow: column;
+}
+.grid {
+    display: grid;
 }
