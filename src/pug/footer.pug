@@ -22,7 +22,7 @@ mixin row (name,caption,values)
             +item(value)
 
 mixin tdrow (name, caption,values)
-    table(class=name)
+    table(class=name).leftspace20
         tr
             td.left.leftspace20
                 p.txt_700.color_darkShade75=caption
@@ -42,21 +42,117 @@ mixin icons()
     span.fontIcons.gradient.fs-24.leftspace20=""
     span.fontIcons.gradient.fs-24.leftspace20=""
 
+mixin button(type,color,caption)
+    if type=="1"
+        if color == "light"
+            span.button1.light
+                p.gradient.fs-12.txt_700.uppercase=caption
+        else
+            span.button1
+                p.gradient.fs-12.txt_700.uppercase=caption
+
+    if type == "2"
+        if color == "light"
+            span.button2.light
+                p.color_white.fs-12.txt_700.uppercase=caption
+        else
+            span.button2
+                p.color_white.fs-12.txt_700.uppercase=caption
+
+    if type == "3"
+        if color == "light"
+            span.button3.light
+                p.fs-12.txt_700.uppercase.color_darkShade75=caption
+        else
+            span.button3
+                p.fs-12.txt_700.uppercase.gradient=caption
+
+    if type == "4"
+        if color == "light"
+            span.button2.light
+                p.color_white.fs-12.txt_700.uppercase=caption
+        else
+            span.button2
+                span.inline
+                    p.color_white.fs-12.txt_700.uppercase=caption
+                span.material-icons.fs-24.inline.absolute.vcenter.color_white="arrow_forward"
+
 mixin auth(auth)
     if auth==1
         table
             tr
+                td
+                    +button("1","dark","войти")
                 td.leftspace20
-                    span.button1
-                        p.gradient.fs-12.txt_700="ВОЙТИ"
-                td.leftspace20
-                    span.button2
-                        p.color_white.fs-12.txt_700="ЗАРЕГИСТРИРОВАТЬСЯ"
+                    +button("2","dark","зарегистрироваться")
     else
         table
-            tr
-                td.leftspace20
-                    p="Юлий Цезарь"
+            td.leftspace20
+                span.line
+                    p.leftspace20="Юлий Цезарь"
+// ===============   Заголовок =======================
+mixin header (auth)
+    .header
+        span.Rectangle3.border
+            table(width='90%' align='center' height='100%')
+                tr
+                    td.left
+                        +logo()
+                    td.right
+                        +upmenu()
+                    td.left
+                        span.def
+                           +auth(auth)
+
+// ===============  Подвал =======================
+mixin footer(size)
+    if size=="small"
+        .footer
+            div.Rectangle4.border
+                div.width
+                    span.group5
+                        +logo()
+                        span.upspace20
+                            a.color_darkShade75="Copyright © 2018 Toxin отель. Все права защищены."
+                        span.upspace25
+                            +icons()
+    else
+        .footer
+            .Rectangle.border
+                span.a
+                    table(width='90%' align='center')
+                        tr
+                            td.left.top
+                                span.group.flex
+                                    +logo()
+                                    p.color_darkShade75.lh-24="Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды"
+                            td.left.top
+                                +row("group1","Навигация",values)
+                            td.left.top
+                                +row("group2","О нас",['О сервисе', 'Наша команда', 'Вакансии', 'Инвесторы'])
+                            td.left.top
+                                +row("group3","Служба поддежки",['Соглашения', 'Сообщества', 'Вакансии', 'Связь с нами'])
+                            td.left.top
+                                span.group4.flex
+                                    span
+                                        h3="Подписка"
+                                        p.lh-24.color_darkShade75="Получайте специальные предложения и новости сервиса"
+                                    span.Rectangle2
+                                        table(width='100%' height='100%')
+                                            tr
+                                                td(height='100%').left
+                                                    span.txt_normal.color_darkShade25.vcenter="Email"
+                                                td.right
+                                                    span.material-icons.fs-24.vcenter.gradient="arrow_forward"
+            .Rectangle3.border
+                table(width='90%' height='100%' align='center')
+                    tr
+                        td.left
+                            span.left
+                                a.color_darkShade75="Copyright © 2018 Toxin отель. Все права защищены."
+                        td
+                                span
+                                +icons
 
 doctype html
 html(lang="ru")
@@ -72,66 +168,8 @@ html(lang="ru")
 
     title="Toxin-footer"
     body
-        .header1
-            span.headerRect1.border
-                table(width='90%' align='center' height='100%')
-                    tr
-                        td.left
-                            +logo()
-                        td.center.right
-                            +upmenu()
-                        td.left.center
-                            span.def
-                                +auth(1)
-        .header2
-            span.headerRect1.border
-                table(width='90%' height='100%' align='center')
-                    tr
-                        td.left
-                            +logo()
-                        td.center.right
-                            +upmenu()
-                        td.left.center
-                            span.def
-                                +auth(0)
+        +header(1)
+        +header(0)
 
-        .footer1
-            .Rectangle.border
-                span.a
-                    table(width='90%' align='center')
-                        tr
-                            td.left.top
-                               span.group.flex
-                                    +logo()
-                                    p.color_darkShade75.lh-24="Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды"
-                            td.left.top
-                                +row("group1","Навигация",values)
-                            td.left.top
-                                +row("group2","О нас",['О сервисе','Наша команда','Вакансии','Инвесторы'])
-                            td.left.top
-                                +row("group3","Служба поддежки",['Соглашения','Сообщества','Вакансии','Связь с нами'])
-                            td.left.top
-                                span.group4.flex
-                                    span
-                                        h3="Подписка"
-                                        p.lh-24.color_darkShade75="Получайте специальные предложения и новости сервиса"
-                                    span.Rectangle2
-                                        table(width='100%' height='100%')
-                                            tr
-                                                td(height='100%').left
-                                                    span.txt_normal.color_darkShade25.vcenter="Email"
-                                                td.right
-                                                    span.material-icons.fs-24.vcenter.gradient="arrow_forward"
-            .Rectangle3.border
-                span.txt_c.left
-                    a.txt_normal="Copyright © 2018 Toxin отель. Все права защищены."
-                span.img_c
-                    +icons
-        .footer2
-            div.Rectangle4.border
-                div.width
-                    span.group5
-                        +logo()
-                        a.txt_normal.upspace20="Copyright © 2018 Toxin отель. Все права защищены."
-                        span.upspace25
-                            +icons()
+        +footer("big")
+        +footer("small")

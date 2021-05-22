@@ -1,5 +1,3 @@
-
-
 @font-face{
     font-family: "Avesome"; /* Гарнитура шрифта */
     src: url("../fnt/fa-brands-400.ttf") format("truetype");
@@ -12,27 +10,6 @@
 .uppercase {
     text-transform: uppercase;
 }
-
-.button_default{
-    position: absolute;
-    height: 34px;
-    top: 0px;
-    border-radius: 22px;
-    border: 2px solid;
-    border-color: #8BA4F9;
-  //  border-image-source: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-    padding: 0px;
-}
-
-.button_txt {
-    position: absolute;
-    top: 9px;
-    left: 20px;
-}
-.button_fill {
-    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-}
-
 .color_white {
     color: #FFFFFF;
 }
@@ -64,7 +41,6 @@ h1 {
     font-size: 24px;
     line-height: 29px;
 }
-
 h2 {
     font-family: Montserrat, sans-serif;
     font-style: normal;
@@ -91,15 +67,6 @@ body {
     color:  rgba(31, 32, 65, 0.5);
     background-color: #E5E5E5;
 }
-
-.txt {
-    font-family: Montserrat, sans-serif;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 17px;
-}
-
 .left {
     text-align: left;
     padding-left: 10px;
@@ -129,9 +96,8 @@ body {
 .lh-24 {
     line-height: 24px;
 }
-
 .vcenter {
-    display: inline;
+    display: inline-block;
     vertical-align: middle;
 }
 .top {
@@ -143,12 +109,6 @@ body {
     -webkit-background-clip: text;
     background-clip: text;
 }
-.bordergradient{
-    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-    z-index: -1;
-    border: 10px solid transparent;
-}
-
 .fontIcons {
     font-family: Avesome;
     font-style: normal;
@@ -179,12 +139,4 @@ body {
     display: flex;
     flex-flow: column;
 }
-.grid {
-    display: grid;
-}
 
-.table {
-    width: 90%;
-    height: 100%;
-    text-align: center;
-}
