@@ -1,9 +1,4 @@
-@font-face{
-    font-family: "Montserrat"; /* Гарнитура шрифта */
-    src: url("../fnt/Montserrat-Regular.ttf") format("truetype");
-    font-style: normal;
-    font-weight: normal;
-}
+
 
 @font-face{
     font-family: "Avesome"; /* Гарнитура шрифта */
@@ -63,7 +58,7 @@
     color:#6FCF97;
 }
 h1 {
-    font-family: Montserrat;
+    font-family: Montserrat, sans-serif;
     font-style: normal;
     font-weight: bold;
     font-size: 24px;
@@ -71,14 +66,14 @@ h1 {
 }
 
 h2 {
-    font-family: Montserrat;
+    font-family: Montserrat, sans-serif;
     font-style: normal;
     font-weight: bold;
     font-size: 19px;
     line-height: 23px;
 }
 h3 {
-    font-family: Montserrat;
+    font-family: Montserrat, sans-serif;
     font-style: normal;
     font-weight: bold;
     font-size: 12px;
@@ -88,7 +83,7 @@ h3 {
 }
 
 body {
-    font-family: Montserrat;
+    font-family: Montserrat, sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
@@ -98,7 +93,7 @@ body {
 }
 
 .txt {
-    font-family: Montserrat, serif;
+    font-family: Montserrat, sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
@@ -128,6 +123,9 @@ body {
 .fs-24 {
     font-size: 24px;
 }
+.fs-12 {
+    font-size: 12px;
+}
 .lh-24 {
     line-height: 24px;
 }
@@ -145,6 +143,11 @@ body {
     -webkit-background-clip: text;
     background-clip: text;
 }
+.bordergradient{
+    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    z-index: -1;
+    border: 10px solid transparent;
+}
 
 .fontIcons {
     font-family: Avesome;
@@ -153,6 +156,9 @@ body {
 }
 .leftspace20 {
     padding-left: 20px;
+}
+.leftspace0 {
+    padding-left: -3px;
 }
 
 .width {
@@ -175,4 +181,10 @@ body {
 }
 .grid {
     display: grid;
+}
+
+.table {
+    width: 90%;
+    height: 100%;
+    text-align: center;
 }

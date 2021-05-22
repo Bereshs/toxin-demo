@@ -3,7 +3,17 @@ mixin item (value)
         p.txt=value
 
 mixin itemtd(value)
-    td.leftspace20=value
+    if value=="Соглашения"
+        td.leftspace20=value
+        td
+            span.material-icons="expand_more"
+    else
+        if value == "Услуги"
+            td.leftspace20=value
+            td
+                span.material-icons="expand_more"
+        else
+            td.leftspace20=value
 
 mixin row (name,caption,values)
     span(class=name)
@@ -15,9 +25,38 @@ mixin tdrow (name, caption,values)
     table(class=name)
         tr
             td.left.leftspace20
-                p.txt_700=caption
+                p.txt_700.color_darkShade75=caption
             each value in values
                 +itemtd(value)
+
+mixin upmenu()
+    span.def
+        +tdrow("", "О нас", ['Услуги', 'Вакансии', 'Новости', 'Соглашения'])
+
+mixin logo()
+    span.def
+        img(src="src/img/Logo.svg" alt="Logo" class="logo")
+
+mixin icons()
+    span.fontIcons.gradient.fs-24=""
+    span.fontIcons.gradient.fs-24.leftspace20=""
+    span.fontIcons.gradient.fs-24.leftspace20=""
+
+mixin auth(auth)
+    if auth==1
+        table
+            tr
+                td.leftspace20
+                    span.button1
+                        p.gradient.fs-12.txt_700="ВОЙТИ"
+                td.leftspace20
+                    span.button2
+                        p.color_white.fs-12.txt_700="ЗАРЕГИСТРИРОВАТЬСЯ"
+    else
+        table
+            tr
+                td.leftspace20
+                    p="Юлий Цезарь"
 
 doctype html
 html(lang="ru")
@@ -28,28 +67,34 @@ html(lang="ru")
         link(rel="stylesheet" href="./src/css/Footers.css")
         link(rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons")
         link(rel="stylesheet" href="./src/css/Toxin.css")
+        link(rel="preconnect" href="https://fonts.gstatic.com")
+        link(ref="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet")
+
     title="Toxin-footer"
     body
         .header1
             span.headerRect1.border
-                table(width='90%' align='center')
+                table(width='90%' align='center' height='100%')
                     tr
-                        td.left.top
-                            span.def
-                                img(src="src/img/Logo.svg" alt="Logo" class="logo")
-                        td.top.right
-                            span.def
-                                +tdrow("", "О нас", ['Услуги', 'Вакансии', 'Новости', 'Соглашения'])
+                        td.left
+                            +logo()
+                        td.center.right
+                            +upmenu()
                         td.left.center
                             span.def
-                                table
-                                    tr
-                                        td.leftspace20
-                                            span.button1
-                                                p.gradient="ВОЙТИ"
-                                        td.leftspace20
-                                            span.button2
-                                                p.color_white="ЗАРЕГИСТРИРОВАТЬСЯ"
+                                +auth(1)
+        .header2
+            span.headerRect1.border
+                table(width='90%' height='100%' align='center')
+                    tr
+                        td.left
+                            +logo()
+                        td.center.right
+                            +upmenu()
+                        td.left.center
+                            span.def
+                                +auth(0)
+
         .footer1
             .Rectangle.border
                 span.a
@@ -57,8 +102,7 @@ html(lang="ru")
                         tr
                             td.left.top
                                span.group.flex
-                                    span.def
-                                        img(src="src/img/Logo.svg" alt="Logo" class="logo")
+                                    +logo()
                                     p.color_darkShade75.lh-24="Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды"
                             td.left.top
                                 +row("group1","Навигация",values)
@@ -70,7 +114,7 @@ html(lang="ru")
                                 span.group4.flex
                                     span
                                         h3="Подписка"
-                                        p.lh-24="Получайте специальные предложения и новости сервиса"
+                                        p.lh-24.color_darkShade75="Получайте специальные предложения и новости сервиса"
                                     span.Rectangle2
                                         table(width='100%' height='100%')
                                             tr
@@ -82,17 +126,12 @@ html(lang="ru")
                 span.txt_c.left
                     a.txt_normal="Copyright © 2018 Toxin отель. Все права защищены."
                 span.img_c
-                    span.fontIcons.gradient.fs-24=""
-                    span.fontIcons.gradient.fs-24.leftspace20=""
-                    span.fontIcons.gradient.fs-24.leftspace20=""
+                    +icons
         .footer2
             div.Rectangle4.border
                 div.width
                     span.group5
-                        span
-                            img(src="src/img/Logo.svg" alt="Logo" class="logo center")
+                        +logo()
                         a.txt_normal.upspace20="Copyright © 2018 Toxin отель. Все права защищены."
                         span.upspace25
-                            span.fontIcons.gradient.fs-24=""
-                            span.fontIcons.gradient.fs-24.leftspace20=""
-                            span.fontIcons.gradient.fs-24.leftspace20=""
+                            +icons()

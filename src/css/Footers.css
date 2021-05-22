@@ -54,7 +54,13 @@
     display: inline-block;
     vertical-align: bottom;
 }
-
+.header2 {
+    position: relative;
+    text-align: center;
+    width: 100%;
+    display: inline-block;
+    vertical-align: bottom;
+}
 .headerRect1 {
     position: relative;
     width: 1440px;
@@ -184,19 +190,33 @@
 .button1 {
     position: relative;
     display: inline-block;
-    border-radius: 22px;
-    border: 2px solid;
-    box-sizing: border-box;
     width: 87px;
     height: 34px;
+}
+
+.button1:before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    border-radius:22px;
+    padding:2px;
+    background:linear-gradient(180deg, rgba(188, 156, 255, 1), rgba(139, 164, 249, 1));
+    -webkit-mask:
+            linear-gradient(#fff 0 0) content-box,
+            linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
 }
 
 .button2 {
     position: relative;
     display: inline-block;
     border-radius: 22px;
-    border: 2px solid;
-    box-sizing: border-box;
+    border: 2px solid transparent;
+
     width: 196px;
     height: 34px;
     background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
@@ -204,4 +224,7 @@
 
 .posrel {
     position: relative;
+}
+.upspacem20 {
+    padding-top: 5px;
 }
